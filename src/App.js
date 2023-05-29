@@ -10,6 +10,7 @@ const API_KEY = "AIzaSyD7n0lXwUkj_jKH6m3MW-1c0ED5j5MGrEE";
 const App = () => {
     const [videos, setVideos] = useState([]);
     const [selectedVideoId, setSelectedVideoId] = useState('');
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
     useEffect(() => {
         getDefaultVideos().then((defaultVideos) => {
@@ -63,12 +64,18 @@ const App = () => {
         return terms[randomIndex];
     };
 
+    const playNextVideo = () => {
+        const nextIndex = (currentVideoIndex + 1) % videos.length;
+        const nextVideoId = videos[nextIndex].id;
+        setSelectedVideoId(nextVideoId);
+        setCurrentVideoIndex(nextIndex);
+      };
 
     return (
         <div className='container'>
             <h1 className='title'>Recherche de vidéos YouTube</h1>
             <SearchBar onSearch={handleSearch} />
-            {selectedVideoId && <VideoPlayer videoId={selectedVideoId} />}
+            {selectedVideoId && <VideoPlayer videoId={selectedVideoId} onNextVideo={playNextVideo} isLastVideo={currentVideoIndex === videos.length - 1} />}
             {Array.isArray(videos) && videos.length > 0 && !selectedVideoId ? (
                 <VideoList videos={videos} onPlayVideo={handlePlayVideo} />
             ) : (
