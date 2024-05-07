@@ -5,7 +5,7 @@ import VideoList from './components/VideoList';
 import VideoPlayer from './components/VideoPlayer';
 import './App.css';
 
-const API_KEY = "AIzaSyD7n0lXwUkj_jKH6m3MW-1c0ED5j5MGrEE";
+const API_KEY = "AIzaSyCYC8-sKprgUBCynXvWRz7383ItBj4TbbI";
 
 const App = () => {
     const [videos, setVideos] = useState([]);
