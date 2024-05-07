@@ -23,7 +23,7 @@ const App = () => {
             const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
                 params: {
                     part: 'snippet',
-                    maxResults: 15,
+                    maxResults: 32,
                     q: query,
                     key: API_KEY,
                 },
@@ -46,7 +46,7 @@ const App = () => {
             const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
                 params: {
                     part: 'snippet',
-                    maxResults: 15,
+                    maxResults: 32,
                     q: randomTerm,
                     key: API_KEY,
                 },
