@@ -1,8 +1,7 @@
 .container{
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 2rem;
     display: flex;
-    background: grey;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
@@ -10,21 +9,31 @@
 }
 .title{
     margin: 1rem;
+    color:rgb(251, 4, 4);
+    text-shadow: rgb(176, 169, 169) 1px 0 10px;
+    letter-spacing: 2px;
 }
 .formulaire{
     margin-bottom: 1rem;
-    border: none;
 }
 .formulaire input{
     width: 200px;
     height: 30px;
     outline: none;
+   border-radius: 15px;
+    margin-right: 1rem;
+    border: 1px solid red;
     padding: 0.5rem;
 }
 .formulaire button{
+    border-radius: 15px;
+    border: 1px solid red;
     height: 30px;
     width: 100px;
     cursor: pointer;
+}
+.formulaire button:hover{
+    background: red;
 }
 .video-list{
     display: flex;
@@ -37,6 +46,7 @@
     display: flex;
     flex-direction: column;
     margin: 1rem;
+    border-radius: 15px;
 }
 .video-card img{
     width: 350px;
@@ -49,15 +59,113 @@
     font-weight: 400;
     color: black;
     width: 350px;
+    height: 50px;
     background: white;
     padding: 0.5rem;
     border-radius: 0 0 5px 5px;
 }
 .video{
     background-color: black;
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 1500px){
+    .video-list{
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .video-card{
+        width: 300px;
+    }
+    .video-card img{
+        width: 300px;
+    }
+    .description{
+        width: 300px;
+    }
+    .title{
+        font-size: 18px;
+    }
+    .formulaire input{
+        width: 180px;
+    }
+    .formulaire button{
+        width: 80px;
+    }
+    .video{
+        width: 900px;
+    }
+    .video iframe{
+        width: 900px;
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 950px){
+    .video-list{
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .video-card{
+        width: 300px;
+    }
+    .video-card img{
+        width: 300px;
+    }
+    .description{
+        width: 300px;
+    }
+    .title{
+        font-size: 18px;
+    }
+    .formulaire input{
+        width: 180px;
+    }
+    .formulaire button{
+        width: 80px;
+    }
+    .video{
+        width: 800px;
+    }
+    .video iframe{
+        width: 800px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 850px){
+    .video-list{
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .video-card{
+        width: 300px;
+    }
+    .video-card img{
+        width: 300px;
+    }
+    .description{
+        width: 300px;
+    }
+    .title{
+        font-size: 18px;
+    }
+    .formulaire input{
+        width: 180px;
+    }
+    .formulaire button{
+        width: 80px;
+    }
+    .video{
+        width: 380px;
+    }
+    .video iframe{
+        width: 800px;
+        height: 400px;
+    }
 }
 
 @media (max-width: 580px){
@@ -84,10 +192,10 @@
         width: 80px;
     }
     .video{
-        width: auto;
+        width: 350px;
     }
     .video iframe{
-        width: 300px;
-        height: 400px;
+        width: 350px;
+        height: 300px;
     }
 }

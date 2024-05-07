@@ -7,5 +7,5 @@
     font-family: 'Pangolin', cursive;
 }
 body{
-    background: black;
+    background: linear-gradient(90deg, #000000 41%, #fff 100%);
 }
