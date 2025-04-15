@@ -10,8 +10,11 @@
 .title{
     margin: 1rem;
     color:rgb(251, 4, 4);
-    text-shadow: rgb(176, 169, 169) 1px 0 10px;
     letter-spacing: 2px;
+    background-color: black;
+    padding: 1rem;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
 }
 .formulaire{
     margin-bottom: 1rem;
@@ -20,17 +23,20 @@
     width: 200px;
     height: 30px;
     outline: none;
-   border-radius: 15px;
     margin-right: 1rem;
     border: 1px solid red;
     padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.5);
 }
 .formulaire button{
-    border-radius: 15px;
     border: 1px solid red;
     height: 30px;
     width: 100px;
     cursor: pointer;
+    transition: all .3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.5);
 }
 .formulaire button:hover{
     background: red;
@@ -73,7 +79,9 @@
 .video iframe{
     background-color: black;
     display: flex;
+    border-radius: 5px;
     justify-content: center;
+    height: 600px;
     border: 0px ;
     box-shadow: 0 4px 4px rgba(0,0,0,0.5);
 }
