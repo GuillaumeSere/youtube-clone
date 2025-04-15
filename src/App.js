@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import VideoPlayer from './components/VideoPlayer';
+import { TiSocialYoutube } from "react-icons/ti";
 import './App.css';
 
 const API_KEY = "AIzaSyCYC8-sKprgUBCynXvWRz7383ItBj4TbbI";
@@ -73,7 +74,7 @@ const App = () => {
 
     return (
         <div className='container'>
-            <h1 className='title'>Recherche de vidéos YouTube</h1>
+            <h1 className='title'>Recherche de vidéos YouTube<TiSocialYoutube className='icon' /></h1>
             <SearchBar onSearch={handleSearch} />
             {selectedVideoId && <VideoPlayer videoId={selectedVideoId} onNextVideo={playNextVideo} isLastVideo={currentVideoIndex === videos.length - 1} />}
             {Array.isArray(videos) && videos.length > 0 && !selectedVideoId ? (
