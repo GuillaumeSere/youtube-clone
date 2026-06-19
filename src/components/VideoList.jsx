@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiPlayCircle } from 'react-icons/fi';
+import { FiBookmark, FiEye, FiHeart, FiPlayCircle } from 'react-icons/fi';
 
 const formatDate = (date) => {
     return new Intl.DateTimeFormat('fr-FR', {
@@ -9,7 +9,29 @@ const formatDate = (date) => {
     }).format(new Date(date));
 };
 
-const VideoList = ({ videos, selectedVideoId, isLoading, onPlayVideo }) => {
+const formatViews = (views) => {
+    const viewCount = Number(views);
+
+    if (!Number.isFinite(viewCount)) {
+        return 'Vues indisponibles';
+    }
+
+    return `${new Intl.NumberFormat('fr-FR', {
+        notation: 'compact',
+        maximumFractionDigits: 1,
+    }).format(viewCount)} vues`;
+};
+
+const VideoList = ({
+    videos,
+    selectedVideoId,
+    favoriteIds,
+    likedIds,
+    isLoading,
+    onPlayVideo,
+    onToggleFavorite,
+    onToggleLike,
+}) => {
     if (isLoading) {
         return (
             <div className="video-list" aria-label="Chargement des videos">
@@ -35,28 +57,73 @@ const VideoList = ({ videos, selectedVideoId, isLoading, onPlayVideo }) => {
                 const isSelected = videoId === selectedVideoId;
 
                 return (
-                    <button
-                        type="button"
+                    <article
                         key={videoId}
                         className={isSelected ? 'video-card selected' : 'video-card'}
-                        onClick={() => onPlayVideo(videoId, index)}
                     >
-                        <span className="thumbnail-wrap">
-                            <img
-                                src={video.snippet.thumbnails.medium.url}
-                                alt=""
-                                loading="lazy"
-                            />
-                            <span className="play-badge">
-                                <FiPlayCircle aria-hidden="true" />
+                        <button
+                            type="button"
+                            className="thumbnail-button"
+                            onClick={() => onPlayVideo(videoId, index)}
+                            aria-label={`Lire ${video.snippet.title}`}
+                        >
+                            <span className="thumbnail-wrap">
+                                <img
+                                    src={video.snippet.thumbnails.medium.url}
+                                    alt=""
+                                    loading="lazy"
+                                />
+                                <span className="play-badge">
+                                    <FiPlayCircle aria-hidden="true" />
+                                </span>
+                            </span>
+                        </button>
+                        <span className="video-meta">
+                            <button
+                                type="button"
+                                className="video-title-button"
+                                onClick={() => onPlayVideo(videoId, index)}
+                            >
+                                {video.snippet.title}
+                            </button>
+                            <span>{video.snippet.channelTitle}</span>
+                            <span className="video-stats">
+                                <small>{formatDate(video.snippet.publishedAt)}</small>
+                                <small>
+                                    <FiEye aria-hidden="true" />
+                                    {formatViews(video.statistics?.viewCount)}
+                                </small>
+                            </span>
+                            <span className="video-actions">
+                                <button
+                                    type="button"
+                                    className={favoriteIds.includes(videoId) ? 'active' : ''}
+                                    onClick={() => onToggleFavorite(video)}
+                                    aria-label={
+                                        favoriteIds.includes(videoId)
+                                            ? 'Retirer des favoris'
+                                            : 'Ajouter aux favoris'
+                                    }
+                                >
+                                    <FiBookmark aria-hidden="true" />
+                                    Favori
+                                </button>
+                                <button
+                                    type="button"
+                                    className={likedIds.includes(videoId) ? 'active like' : 'like'}
+                                    onClick={() => onToggleLike(video)}
+                                    aria-label={
+                                        likedIds.includes(videoId)
+                                            ? 'Retirer le jaime'
+                                            : 'Ajouter un jaime'
+                                    }
+                                >
+                                    <FiHeart aria-hidden="true" />
+                                    J'aime
+                                </button>
                             </span>
                         </span>
-                        <span className="video-meta">
-                            <strong>{video.snippet.title}</strong>
-                            <span>{video.snippet.channelTitle}</span>
-                            <small>{formatDate(video.snippet.publishedAt)}</small>
-                        </span>
-                    </button>
+                    </article>
                 );
             })}
         </div>
