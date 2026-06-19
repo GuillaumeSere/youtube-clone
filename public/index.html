@@ -2,37 +2,121 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
     <meta name="theme-color" content="#020617" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- SEO principal -->
+    <title>YouTube Finder — Rechercher des vidéos YouTube</title>
+
     <meta
       name="description"
-      content="YouTube Finder permet de rechercher des videos YouTube, de lancer un lecteur integre et d'enchainer les resultats depuis une interface rapide et responsive."
+      content="Recherchez des vidéos YouTube, regardez-les dans un lecteur intégré et enchaînez les résultats depuis une interface rapide et responsive."
     />
+
+    <link
+      rel="canonical"
+      href="https://youtube-finder-60.vercel.app/"
+    />
+
     <meta
-      name="keywords"
-      content="YouTube Finder, recherche YouTube, videos YouTube, lecteur YouTube, application React"
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="author" content="YouTube Finder" />
-    <meta name="robots" content="index, follow" />
+
+    <!-- Vérification Google Search Console -->
+    <meta
+      name="google-site-verification"
+      content="nwVPqsKRGvHVh9v-Qn4QoawQzNbN99Sfg6usOSlUEhg"
+    />
+
+    <!-- Icône -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Open Graph : Facebook, LinkedIn, Discord, WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="YouTube Finder - Recherche et lecteur de videos YouTube" />
+
+    <meta
+      property="og:url"
+      content="https://youtube-finder-60.vercel.app/"
+    />
+
+    <meta
+      property="og:title"
+      content="YouTube Finder — Rechercher des vidéos YouTube"
+    />
+
     <meta
       property="og:description"
-      content="Trouvez des videos YouTube, ouvrez un lecteur integre et naviguez rapidement dans vos resultats."
+      content="Recherchez des vidéos YouTube, regardez-les dans un lecteur intégré et enchaînez facilement les résultats."
     />
+
+    <meta
+      property="og:image"
+      content="https://youtube-finder-60.vercel.app/og-image.png"
+    />
+
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta
+      property="og:image:alt"
+      content="Aperçu de l’application YouTube Finder"
+    />
+
     <meta property="og:site_name" content="YouTube Finder" />
     <meta property="og:locale" content="fr_FR" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="YouTube Finder - Recherche YouTube rapide" />
+
+    <!-- Carte X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta
+      name="twitter:title"
+      content="YouTube Finder — Rechercher des vidéos YouTube"
+    />
+
     <meta
       name="twitter:description"
-      content="Une app React pour explorer, lancer et enchainer des videos YouTube."
+      content="Recherchez et regardez des vidéos YouTube depuis une interface rapide avec lecteur intégré."
     />
-    <title>YouTube Finder - Recherche et lecteur de videos YouTube</title>
+
+    <meta
+      name="twitter:image"
+      content="https://youtube-finder-60.vercel.app/og-image.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Aperçu de l’application YouTube Finder"
+    />
+
+    <!-- Nom du site pour Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "YouTube Finder",
+        "alternateName": [
+          "YouTubeFinder",
+          "youtube-finder-60.vercel.app"
+        ],
+        "url": "https://youtube-finder-60.vercel.app/"
+      }
+    </script>
   </head>
+
   <body>
-    <noscript>Vous devez activer JavaScript pour utiliser YouTube Finder.</noscript>
+    <noscript>
+      Vous devez activer JavaScript pour rechercher et regarder des vidéos avec
+      YouTube Finder.
+    </noscript>
+
     <div id="root"></div>
   </body>
 </html>
