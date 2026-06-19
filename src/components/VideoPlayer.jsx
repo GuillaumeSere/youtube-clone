@@ -1,21 +1,13 @@
 import React from 'react';
 
-const VideoPlayer = ({ videoId, onNextVideo, isLastVideo }) => {
-    const handleVideoEnd = () => {
-      if (isLastVideo) {
-        onNextVideo(); // Appeler onNextVideo pour passer à la première vidéo
-      }
-    };
-
+const VideoPlayer = ({ videoId, title }) => {
     return (
-        <div className='video'>
+        <div className="video-player">
             <iframe
-                width="1440"
-                height="415"
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                title="YouTube Video Player"
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                title={title || 'Lecteur video YouTube'}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                onEnded={handleVideoEnd} // Ajouter l'événement onEnded
             />
         </div>
     );

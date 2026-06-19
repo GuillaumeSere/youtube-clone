@@ -1,33 +1,34 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FiSearch } from 'react-icons/fi';
 
-const SearchBar = ({ onSearch }) => {
-    const [query, setQuery] = useState('');
-    const inputRef = useRef(null);
+const SearchBar = ({ onSearch, isLoading, initialQuery }) => {
+    const [query, setQuery] = useState(initialQuery || '');
 
-    const handleChange = (event) => {
-        setQuery(event.target.value);
-    };
+    useEffect(() => {
+        setQuery(initialQuery || '');
+    }, [initialQuery]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         onSearch(query);
     };
 
-    const handleBlur = () => {
-        inputRef.current.focus();
-    };
-
     return (
-        <form className='formulaire' onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={query}
-                onChange={handleChange}
-                placeholder="Rechercher des vidéos YouTube"
-                ref={inputRef}
-                onBlur={handleBlur}
-            />
-            <button type="submit">Rechercher</button>
+        <form className="search-form" onSubmit={handleSubmit}>
+            <label htmlFor="video-search">Recherche YouTube</label>
+            <div className="search-control">
+                <FiSearch aria-hidden="true" />
+                <input
+                    id="video-search"
+                    type="search"
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    placeholder="Artiste, tuto, recette..."
+                />
+                <button type="submit" disabled={isLoading}>
+                    {isLoading ? 'Recherche...' : 'Rechercher'}
+                </button>
+            </div>
         </form>
     );
 };
