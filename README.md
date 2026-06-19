@@ -1,2 +1,3 @@
 # 
-![20230529101314](https://github.com/GuillaumeSere/youtube-clone/assets/75996200/4beb46c9-e3f8-4caa-9653-0f3cfeedd9df)
+<img width="1914" height="919" alt="20260619142322" src="https://github.com/user-attachments/assets/8292658b-35f7-4bfc-8962-23d07f6a8e02" />
+
