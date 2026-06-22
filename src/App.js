@@ -280,7 +280,7 @@ const App = () => {
                         <FiYoutube aria-hidden="true" />
                         YouTube Finder
                     </span>
-                    <h1>Explore, lance et enchaine tes videos sans quitter la page.</h1>
+                    <h1>Explore, lance et enchaine tes videos sans quitter la page</h1>
                     <p>
                         Recherche des videos YouTube, garde tes coups de coeur en favoris,
                         like les meilleures trouvailles et navigue dans ta selection.
@@ -366,13 +366,13 @@ const App = () => {
                             <div className="player-controls">
                                 <button type="button" onClick={playPreviousVideo} disabled={!visibleVideos.length}>
                                     <FiChevronLeft aria-hidden="true" />
-                                    Precedente
+                                  
                                 </button>
                                 <span>
                                     {currentVideoIndex + 1} / {visibleVideos.length}
                                 </span>
                                 <button type="button" onClick={playNextVideo} disabled={!visibleVideos.length}>
-                                    Suivante
+                                  
                                     <FiChevronRight aria-hidden="true" />
                                 </button>
                             </div>
@@ -442,6 +442,10 @@ const App = () => {
                     />
                 </aside>
             </section>
+
+            <footer className="app-footer">
+                <p>&copy; 2026 Guillaume SERE. Tous droits r&eacute;serv&eacute;s.</p>
+            </footer>
         </main>
     );
 };
